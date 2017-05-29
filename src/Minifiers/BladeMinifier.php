@@ -52,7 +52,7 @@ class BladeMinifier implements MinifierInterface
     {
         if ($this->shouldMinify($value)) {
 
-            //from http://stackoverflow.com/questions/5312349/minifying-final-html-output-using-regular-expressions-with-codeigniter
+            //From http://stackoverflow.com/questions/5312349/minifying-final-html-output-using-regular-expressions-with-codeigniter
 
             $re = '%# Collapse whitespace everywhere but in blacklisted elements.
         (?>             # Match all whitespans other than single space.
@@ -117,7 +117,7 @@ class BladeMinifier implements MinifierInterface
      */
     protected function containsBadHtml($value)
     {
-        return preg_match('/skip\.minification/', $value) ||
+        return preg_match('/<!--[\s]+skip\.minification[\s]+-->/', $value) ||
         preg_match('/value=("|\')(.*)([ ]{2,})(.*)("|\')/', $value);
     }
 
