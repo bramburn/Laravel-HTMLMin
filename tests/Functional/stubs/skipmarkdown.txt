@@ -7,4 +7,9 @@ hello world!
 * two 
 * three
 
+<<<<<<< HEAD
 skip minification
+=======
+skip minification
+
+>>>>>>> GrahamCampbell/master

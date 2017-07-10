@@ -17,31 +17,19 @@ Laravel HTMLMin was created by, and is maintained by [Graham Campbell](https://g
 
 ## Installation
 
-Either [PHP](https://php.net) 5.5+ or [HHVM](http://hhvm.com) 3.6+ are required.
+Laravel HTMLMin requires [PHP](https://php.net) 5.5+. This particular version supports Laravel 5.1, 5.2, 5.3, or 5.4 only.
 
-To get the latest version of Laravel HTMLMin, simply require the project using [Composer](https://getcomposer.org):
+To get the latest version, simply require the project using [Composer](https://getcomposer.org):
 
 ```bash
 $ composer require graham-campbell/htmlmin
 ```
 
-Instead, you may of course manually update your require block and run `composer update` if you so choose:
+Once installed, you need to register the `GrahamCampbell\HTMLMin\HTMLMinServiceProvider` service provider in your `config/app.php`, and optionally alias our facade:
 
-```json
-{
-    "require": {
-        "graham-campbell/htmlmin": "^4.0"
-    }
-}
+```php
+        'HTMLMin' => GrahamCampbell\HTMLMin\Facades\HTMLMin::class,
 ```
-
-Once Laravel HTMLMin is installed, you need to register the service provider. Open up `config/app.php` and add the following to the `providers` key.
-
-* `'GrahamCampbell\HTMLMin\HTMLMinServiceProvider'`
-
-You can register the HTMLMin facade in the `aliases` key of your `config/app.php` file if you like.
-
-* `'HTMLMin' => 'GrahamCampbell\HTMLMin\Facades\HTMLMin'`
 
 
 ## Configuration
@@ -56,7 +44,7 @@ $ php artisan vendor:publish
 
 This will create a `config/htmlmin.php` file in your app that you can modify to set your configuration. Also, make sure you check for changes to the original config file in this package between releases.
 
-There are two config options:
+There are three config options:
 
 ##### Automatic Blade Optimizations
 
@@ -65,6 +53,10 @@ This option (`'blade'`) enables minification of the blade views as they are comp
 ##### Force Blade Optimizations
 
 This option (`'force'`) forces blade minification on views where there such minification may be dangerous. This should only be used if you are fully aware of the potential issues this may cause. Obviously, this setting is dependent on blade minification actually being enabled. The default value for this setting is `false`.
+
+##### Ignore Blade Files
+
+This option (`'ignore'`) is where you can specify paths, which you don't want to minify. A sensible default for this setting is provided.
 
 
 ## Usage
@@ -93,14 +85,23 @@ You may put the `GrahamCampbell\HTMLMin\Http\Middleware\MinifyMiddleware` middle
 
 ##### Skipping Minification
 
+<<<<<<< HEAD
 There are occassions where you will want to 'skip' the minification of certain blade pages. A use case is when you want to skip the minification of the Markdown blades or Email templates because it removes too many spaces which renders the notification unreadable.
 
 Just add the following comment:
+=======
+As well as being to skip folders using the (`'ignore'`) config, there are occassions where you will want to 'skip' single files.
+
+Just add the following comment to each file you want to skip:
+>>>>>>> GrahamCampbell/master
 
 ```html
 <!-- skip.minification -->
 ```
+<<<<<<< HEAD
 to each blade file to skip the minification. 
+=======
+>>>>>>> GrahamCampbell/master
 
 Please note that if you use (`'force'`) option in the config it will not work.
 

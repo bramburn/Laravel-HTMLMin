@@ -1,5 +1,8 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 
+=======
+>>>>>>> GrahamCampbell/master
 <html lang="en-GB">
 <head>
     <meta charset="utf-8">
@@ -19,6 +22,11 @@
         <p>A simple HTML minifier for Laravel 5</p>
     </div>
 </body>
+<<<<<<< HEAD
 
 </html>
 <!-- skip.minification -->
+=======
+</html>
+<!-- skip.minification -->
+>>>>>>> GrahamCampbell/master

@@ -9,4 +9,8 @@ hello world!
 
 skip minification
 
+<<<<<<< HEAD
 <!-- skip.minification -->
+=======
+<!-- skip.minification -->
+>>>>>>> GrahamCampbell/master
